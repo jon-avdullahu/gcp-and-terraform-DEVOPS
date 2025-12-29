@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-flask-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-frontend
+  template:
+    metadata:
+      labels:
+        app: flask-frontend
+    spec:
+      containers:
+      -  name: my-app-container
+         image: europe-north1-docker.pkg.dev/argon-liberty-482210-c3/my-repo/my-app:v1
+         ports:
+         -  containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: flask-frontend
+  ports:
+  - port: 80
+    targetPort: 5000

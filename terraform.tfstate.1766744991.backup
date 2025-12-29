@@ -1,0 +1,562 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.3",
+  "serial": 15,
+  "lineage": "8795d3b0-84bc-13fa-7842-3c33274b11af",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "google_artifact_registry_repository",
+      "name": "my-repo",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "cleanup_policies": [],
+            "cleanup_policy_dry_run": false,
+            "create_time": "2025-12-26T10:16:29.115298Z",
+            "description": "Docker repository",
+            "docker_config": [],
+            "effective_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "format": "DOCKER",
+            "id": "projects/argon-liberty-482210-c3/locations/europe-north1/repositories/my-repo",
+            "kms_key_name": "",
+            "labels": null,
+            "location": "europe-north1",
+            "maven_config": [],
+            "mode": "STANDARD_REPOSITORY",
+            "name": "my-repo",
+            "project": "argon-liberty-482210-c3",
+            "remote_repository_config": [],
+            "repository_id": "my-repo",
+            "terraform_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "timeouts": null,
+            "update_time": "2025-12-26T10:16:29.115298Z",
+            "virtual_repository_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_compute_network",
+      "name": "custom_vpc_network",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "auto_create_subnetworks": false,
+            "delete_default_routes_on_create": false,
+            "description": "",
+            "enable_ula_internal_ipv6": false,
+            "gateway_ipv4": "",
+            "id": "projects/argon-liberty-482210-c3/global/networks/terraform-custom-vpc",
+            "internal_ipv6_range": "",
+            "mtu": 0,
+            "name": "terraform-custom-vpc",
+            "network_firewall_policy_enforcement_order": "AFTER_CLASSIC_FIREWALL",
+            "numeric_id": "7352554096200925567",
+            "project": "argon-liberty-482210-c3",
+            "routing_mode": "REGIONAL",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/argon-liberty-482210-c3/global/networks/terraform-custom-vpc",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_compute_subnetwork",
+      "name": "network_subnet",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "creation_timestamp": "2025-12-24T06:58:49.095-08:00",
+            "description": "",
+            "external_ipv6_prefix": "",
+            "fingerprint": null,
+            "gateway_address": "10.0.1.1",
+            "id": "projects/argon-liberty-482210-c3/regions/europe-north1/subnetworks/terraform-subnet-europe-north1",
+            "internal_ipv6_prefix": "",
+            "ip_cidr_range": "10.0.1.0/24",
+            "ipv6_access_type": "",
+            "ipv6_cidr_range": "",
+            "log_config": [],
+            "name": "terraform-subnet-europe-north1",
+            "network": "https://www.googleapis.com/compute/v1/projects/argon-liberty-482210-c3/global/networks/terraform-custom-vpc",
+            "private_ip_google_access": true,
+            "private_ipv6_google_access": "DISABLE_GOOGLE_ACCESS",
+            "project": "argon-liberty-482210-c3",
+            "purpose": "PRIVATE",
+            "region": "europe-north1",
+            "reserved_internal_range": "",
+            "role": "",
+            "secondary_ip_range": [
+              {
+                "ip_cidr_range": "10.4.0.0/14",
+                "range_name": "gke-primary-cluster-pods-1c8307db",
+                "reserved_internal_range": "https://networkconnectivity.googleapis.com/v1/projects/argon-liberty-482210-c3/locations/global/internalRanges/gke-primary-cluster-pods-1c8307db"
+              }
+            ],
+            "self_link": "https://www.googleapis.com/compute/v1/projects/argon-liberty-482210-c3/regions/europe-north1/subnetworks/terraform-subnet-europe-north1",
+            "send_secondary_ip_range_if_empty": null,
+            "stack_type": "IPV4_ONLY",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "google_compute_network.custom_vpc_network"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_container_cluster",
+      "name": "primary",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "addons_config": [
+              {
+                "cloudrun_config": [],
+                "config_connector_config": [],
+                "dns_cache_config": [],
+                "gce_persistent_disk_csi_driver_config": [
+                  {
+                    "enabled": true
+                  }
+                ],
+                "gcp_filestore_csi_driver_config": [],
+                "gcs_fuse_csi_driver_config": [],
+                "gke_backup_agent_config": [],
+                "horizontal_pod_autoscaling": [],
+                "http_load_balancing": [],
+                "network_policy_config": [
+                  {
+                    "disabled": true
+                  }
+                ],
+                "ray_operator_config": [],
+                "stateful_ha_config": []
+              }
+            ],
+            "allow_net_admin": null,
+            "authenticator_groups_config": [],
+            "binary_authorization": [
+              {
+                "enabled": false,
+                "evaluation_mode": ""
+              }
+            ],
+            "cluster_autoscaling": [
+              {
+                "auto_provisioning_defaults": [],
+                "auto_provisioning_locations": [],
+                "autoscaling_profile": "BALANCED",
+                "enabled": false,
+                "resource_limits": []
+              }
+            ],
+            "cluster_ipv4_cidr": "10.8.0.0/14",
+            "confidential_nodes": [],
+            "cost_management_config": [],
+            "database_encryption": [
+              {
+                "key_name": "",
+                "state": "DECRYPTED"
+              }
+            ],
+            "datapath_provider": "",
+            "default_max_pods_per_node": 110,
+            "default_snat_status": [
+              {
+                "disabled": false
+              }
+            ],
+            "deletion_protection": false,
+            "description": "",
+            "dns_config": [],
+            "effective_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "enable_autopilot": false,
+            "enable_cilium_clusterwide_network_policy": false,
+            "enable_intranode_visibility": false,
+            "enable_k8s_beta_apis": [],
+            "enable_kubernetes_alpha": false,
+            "enable_l4_ilb_subsetting": false,
+            "enable_legacy_abac": false,
+            "enable_multi_networking": false,
+            "enable_shielded_nodes": true,
+            "enable_tpu": false,
+            "endpoint": "35.228.146.31",
+            "fleet": [],
+            "gateway_api_config": [],
+            "id": "projects/argon-liberty-482210-c3/locations/europe-north1/clusters/primary-cluster",
+            "identity_service_config": [],
+            "initial_node_count": 1,
+            "ip_allocation_policy": [
+              {
+                "additional_pod_ranges_config": [],
+                "cluster_ipv4_cidr_block": "10.8.0.0/14",
+                "cluster_secondary_range_name": "gke-primary-cluster-pods-bb681f35",
+                "pod_cidr_overprovision_config": [
+                  {
+                    "disabled": false
+                  }
+                ],
+                "services_ipv4_cidr_block": "34.118.224.0/20",
+                "services_secondary_range_name": "",
+                "stack_type": "IPV4"
+              }
+            ],
+            "label_fingerprint": "78cdf2f6",
+            "location": "europe-north1",
+            "logging_config": [
+              {
+                "enable_components": [
+                  "SYSTEM_COMPONENTS",
+                  "WORKLOADS"
+                ]
+              }
+            ],
+            "logging_service": "logging.googleapis.com/kubernetes",
+            "maintenance_policy": [],
+            "master_auth": [
+              {
+                "client_certificate": "",
+                "client_certificate_config": [
+                  {
+                    "issue_client_certificate": false
+                  }
+                ],
+                "client_key": "",
+                "cluster_ca_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMVENDQXBXZ0F3SUJBZ0lSQUpWUUxJQlh3cXZSL1ZxeVdGZC81eFF3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa09HWTNPVGd3TVRjdE1qVXdZaTAwT0dRd0xXSXpaRFl0TWpkak9UUTRaV00yTVRBeQpNQ0FYRFRJMU1USXlOakE1TWpBME5Gb1lEekl3TlRVeE1qRTVNVEF5TURRMFdqQXZNUzB3S3dZRFZRUURFeVE0ClpqYzVPREF4TnkweU5UQmlMVFE0WkRBdFlqTmtOaTB5TjJNNU5EaGxZell4TURJd2dnR2lNQTBHQ1NxR1NJYjMKRFFFQkFRVUFBNElCandBd2dnR0tBb0lCZ1FDSkMwUjdpMDlGMW0yVHBjUXU1S0w4Y09UeW8ranAzRU10WGxhNQovRStFV2t5TEtjRU9tK28rTHJGWnV6ZUxKWnBvSjl3L0dmbGJ2OTh0NEJUejhwTGRHV0dlLzkyWDRSVWFmb0Z2CkhWcGZqL3NVcE0rMUsrWnhhbGQ1RFdNdEJ5TnpRa2pObzhuZFdwZEhpYnJFNm9abXpiL21ZdFZPV21RRXFKN0EKcXJYK1Q0Z2REQ0E0bkNxNHlyVUhtcEFuV3hDREFVOEdSK1NlOFhKckEzUkUyZEtham5wQ1VDWElnZEhGMllJOQpjc29SK2lSTXZDL1d2b1lFb2ZHclFpbG9ITkRZRmc3S3pGalZhZFpza2l6WjJ3MVJGajVodERqcWxnbUlmd09yCjF6VWJWN21HRXA1M0Y2Y2hQand2TkFRSnpyNDVMMnFjaThvZzlxVU9ZdC8yY1RRSE0vWFlXdDgrY0RWZTZDZXQKL1NHcjkzTEZWTVNrcVpxK3N3K0xQMU03TlBDQWpSZktlZm1mSFhwOUVHamdWQmp2Z082cXZWTXh5NXZGbU9YdgpZdDIvUklPVjVkMWRsSnFJNHZMWkE1ZzZHeDVKKzJkbXdCcnRRS0hReTc2dm5CcWU4ZTVBbU45a00rNE5vZmFNClRvQTEwNzA0UmVwaFVBTkJFTUk0RTU2UkxQTUNBd0VBQWFOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdJRU1BOEcKQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGSGNIK3lMN2dpWU45MXlGdllUTmxYcFFjK3pVTUEwRwpDU3FHU0liM0RRRUJDd1VBQTRJQmdRQWIycE1Cd3ZNUUJEbEpweTA1eGZGQ0pXeEFVY2JZZmZ1S1I3d1phd1pVCm52RXV0OEtGSlJtdEV5OHlQRy9vc2dHOGRPMFA1NmtsTUhwOHFPVEVhZDF1VnJCN3B0emxhajV0ZWh6TlpvSWkKWlpIQlBjeFJQTER0QUhTVmxMYm9lZHpBdzM4ckhHd3NLUlh3Wlp3V2tVRVRxZ3FrNVQ2RXR2UEYvcHNYUm1mQQpROUZPOVh1a2RaWFYyalZJaVEzZm9IaTkvc2xsOC9zWDFnM0xuM3IzTE1RcnhYNXJNa2pubFB1emd0cjFhUzBFCmJQT0RnaC9udXFJcGVqM1QrN1E2WWhsSWtkWGl0N0xZRXE5L1k4RzFJNzA0bWNTN21ZQjJLMjhPRDJ4a3E3a3YKeWt6UE5BYzRicGR1aXBLcHU1RjJaaXVTbytRUzZUM1duM2d2STA1TWFvUDJqeEpWK3ovNXNZZVhQME1oa0Nwagp6UXZrMEpFeityVzhEcEVSSkVjUW96MGRXSEtFQ09CWWdFYlZXYyt5bENTU0lXOEpOZUtVMnZpMGcxRnBGNnhpCkhIU0U5bUx3dXVlL01IRmdOakhOUGZEMVRpaXE2bmNLTFJNN0ZDSHlETE5xY3NEQU1WOGRqeGVXcGwrMklXVVIKZE54ZnBMa0RiL3R4NmJRWDBHck5wdVE9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+              }
+            ],
+            "master_authorized_networks_config": [],
+            "master_version": "1.33.5-gke.1308000",
+            "mesh_certificates": [],
+            "min_master_version": null,
+            "monitoring_config": [
+              {
+                "advanced_datapath_observability_config": [
+                  {
+                    "enable_metrics": false,
+                    "enable_relay": false
+                  }
+                ],
+                "enable_components": [
+                  "SYSTEM_COMPONENTS",
+                  "HPA",
+                  "POD",
+                  "DAEMONSET",
+                  "DEPLOYMENT",
+                  "STATEFULSET",
+                  "JOBSET",
+                  "STORAGE",
+                  "CADVISOR",
+                  "KUBELET",
+                  "DCGM"
+                ],
+                "managed_prometheus": [
+                  {
+                    "enabled": true
+                  }
+                ]
+              }
+            ],
+            "monitoring_service": "monitoring.googleapis.com/kubernetes",
+            "name": "primary-cluster",
+            "network": "projects/argon-liberty-482210-c3/global/networks/terraform-custom-vpc",
+            "network_policy": [
+              {
+                "enabled": false,
+                "provider": "PROVIDER_UNSPECIFIED"
+              }
+            ],
+            "networking_mode": "VPC_NATIVE",
+            "node_config": [],
+            "node_locations": [
+              "europe-north1-a",
+              "europe-north1-b",
+              "europe-north1-c"
+            ],
+            "node_pool": [],
+            "node_pool_auto_config": [
+              {
+                "network_tags": [],
+                "node_kubelet_config": [
+                  {
+                    "insecure_kubelet_readonly_port_enabled": "FALSE"
+                  }
+                ],
+                "resource_manager_tags": {}
+              }
+            ],
+            "node_pool_defaults": [
+              {
+                "node_config_defaults": [
+                  {
+                    "containerd_config": [],
+                    "gcfs_config": [],
+                    "insecure_kubelet_readonly_port_enabled": "FALSE",
+                    "logging_variant": "DEFAULT"
+                  }
+                ]
+              }
+            ],
+            "node_version": "1.33.5-gke.1308000",
+            "notification_config": [
+              {
+                "pubsub": [
+                  {
+                    "enabled": false,
+                    "filter": [],
+                    "topic": ""
+                  }
+                ]
+              }
+            ],
+            "operation": null,
+            "private_cluster_config": [
+              {
+                "enable_private_endpoint": false,
+                "enable_private_nodes": false,
+                "master_global_access_config": [
+                  {
+                    "enabled": false
+                  }
+                ],
+                "master_ipv4_cidr_block": "",
+                "peering_name": "",
+                "private_endpoint": "10.0.1.13",
+                "private_endpoint_subnetwork": "",
+                "public_endpoint": "35.228.146.31"
+              }
+            ],
+            "private_ipv6_google_access": "",
+            "project": "argon-liberty-482210-c3",
+            "release_channel": [
+              {
+                "channel": "REGULAR"
+              }
+            ],
+            "remove_default_node_pool": true,
+            "resource_labels": null,
+            "resource_usage_export_config": [],
+            "secret_manager_config": [
+              {
+                "enabled": false
+              }
+            ],
+            "security_posture_config": [
+              {
+                "mode": "BASIC",
+                "vulnerability_mode": "VULNERABILITY_MODE_UNSPECIFIED"
+              }
+            ],
+            "self_link": "https://container.googleapis.com/v1/projects/argon-liberty-482210-c3/locations/europe-north1/clusters/primary-cluster",
+            "service_external_ips_config": [
+              {
+                "enabled": false
+              }
+            ],
+            "services_ipv4_cidr": "34.118.224.0/20",
+            "subnetwork": "projects/argon-liberty-482210-c3/regions/europe-north1/subnetworks/terraform-subnet-europe-north1",
+            "terraform_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "timeouts": null,
+            "tpu_ipv4_cidr_block": "",
+            "vertical_pod_autoscaling": [],
+            "workload_identity_config": []
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "master_auth"
+              },
+              {
+                "type": "index",
+                "value": {
+                  "value": 0,
+                  "type": "number"
+                }
+              },
+              {
+                "type": "get_attr",
+                "value": "client_key"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoyNDAwMDAwMDAwMDAwLCJkZWxldGUiOjI0MDAwMDAwMDAwMDAsInJlYWQiOjI0MDAwMDAwMDAwMDAsInVwZGF0ZSI6MzYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMiJ9",
+          "dependencies": [
+            "google_compute_network.custom_vpc_network",
+            "google_compute_subnetwork.network_subnet"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_container_node_pool",
+      "name": "primary_nodes",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "autoscaling": [],
+            "cluster": "primary-cluster",
+            "id": "projects/argon-liberty-482210-c3/locations/europe-north1/clusters/primary-cluster/nodePools/primary-node-pool",
+            "initial_node_count": 1,
+            "instance_group_urls": [
+              "https://www.googleapis.com/compute/v1/projects/argon-liberty-482210-c3/zones/europe-north1-c/instanceGroupManagers/gke-primary-cluster-primary-node-pool-34f22d97-grp",
+              "https://www.googleapis.com/compute/v1/projects/argon-liberty-482210-c3/zones/europe-north1-b/instanceGroupManagers/gke-primary-cluster-primary-node-pool-91d61bae-grp",
+              "https://www.googleapis.com/compute/v1/projects/argon-liberty-482210-c3/zones/europe-north1-a/instanceGroupManagers/gke-primary-cluster-primary-node-pool-d26297c5-grp"
+            ],
+            "location": "europe-north1",
+            "managed_instance_group_urls": [
+              "https://www.googleapis.com/compute/v1/projects/argon-liberty-482210-c3/zones/europe-north1-c/instanceGroups/gke-primary-cluster-primary-node-pool-34f22d97-grp",
+              "https://www.googleapis.com/compute/v1/projects/argon-liberty-482210-c3/zones/europe-north1-b/instanceGroups/gke-primary-cluster-primary-node-pool-91d61bae-grp",
+              "https://www.googleapis.com/compute/v1/projects/argon-liberty-482210-c3/zones/europe-north1-a/instanceGroups/gke-primary-cluster-primary-node-pool-d26297c5-grp"
+            ],
+            "management": [
+              {
+                "auto_repair": true,
+                "auto_upgrade": true
+              }
+            ],
+            "max_pods_per_node": 110,
+            "name": "primary-node-pool",
+            "name_prefix": "",
+            "network_config": [
+              {
+                "additional_node_network_configs": [],
+                "additional_pod_network_configs": [],
+                "create_pod_range": false,
+                "enable_private_nodes": false,
+                "network_performance_config": [],
+                "pod_cidr_overprovision_config": [],
+                "pod_ipv4_cidr_block": "10.4.0.0/14",
+                "pod_range": "gke-primary-cluster-pods-1c8307db"
+              }
+            ],
+            "node_config": [
+              {
+                "advanced_machine_features": [],
+                "boot_disk_kms_key": "",
+                "confidential_nodes": [],
+                "containerd_config": [],
+                "disk_size_gb": 50,
+                "disk_type": "pd-standard",
+                "effective_taints": [],
+                "enable_confidential_storage": false,
+                "ephemeral_storage_local_ssd_config": [],
+                "fast_socket": [],
+                "gcfs_config": [],
+                "guest_accelerator": [],
+                "gvnic": [],
+                "host_maintenance_policy": [],
+                "image_type": "COS_CONTAINERD",
+                "kubelet_config": [
+                  {
+                    "cpu_cfs_quota": false,
+                    "cpu_cfs_quota_period": "",
+                    "cpu_manager_policy": "",
+                    "insecure_kubelet_readonly_port_enabled": "FALSE",
+                    "pod_pids_limit": 0
+                  }
+                ],
+                "labels": {},
+                "linux_node_config": [],
+                "local_nvme_ssd_block_config": [],
+                "local_ssd_count": 0,
+                "logging_variant": "DEFAULT",
+                "machine_type": "e2-medium",
+                "metadata": {
+                  "disable-legacy-endpoints": "true"
+                },
+                "min_cpu_platform": "",
+                "node_group": "",
+                "oauth_scopes": [
+                  "https://www.googleapis.com/auth/cloud-platform"
+                ],
+                "preemptible": true,
+                "reservation_affinity": [],
+                "resource_labels": {},
+                "resource_manager_tags": {},
+                "secondary_boot_disks": [],
+                "service_account": "default",
+                "shielded_instance_config": [
+                  {
+                    "enable_integrity_monitoring": true,
+                    "enable_secure_boot": false
+                  }
+                ],
+                "sole_tenant_config": [],
+                "spot": false,
+                "storage_pools": [],
+                "tags": [],
+                "taint": [],
+                "workload_metadata_config": []
+              }
+            ],
+            "node_count": 1,
+            "node_locations": [
+              "europe-north1-a",
+              "europe-north1-b",
+              "europe-north1-c"
+            ],
+            "operation": null,
+            "placement_policy": [],
+            "project": "argon-liberty-482210-c3",
+            "queued_provisioning": [],
+            "timeouts": null,
+            "upgrade_settings": [
+              {
+                "blue_green_settings": [],
+                "max_surge": 1,
+                "max_unavailable": 0,
+                "strategy": "SURGE"
+              }
+            ],
+            "version": "1.33.5-gke.1308000"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInVwZGF0ZSI6MTgwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "google_compute_network.custom_vpc_network",
+            "google_compute_subnetwork.network_subnet",
+            "google_container_cluster.primary"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
