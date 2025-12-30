@@ -15,6 +15,7 @@ spec:
       containers:
       -  name: my-app-container
          image: europe-north1-docker.pkg.dev/argon-liberty-482210-c3/my-repo/my-app:v1
+         imagePullPolicy: Always
          ports:
          -  containerPort: 5000
 ---
